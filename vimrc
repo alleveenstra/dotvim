@@ -1,8 +1,14 @@
 execute pathogen#infect()
 
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
+set guifont=Source\ Code\ Pro:h12
+
 syntax on
 filetype plugin indent on
-colors jellybeans
+colors molokai
 
 " open nerdtree when you open no file
 autocmd StdinReadPre * let s:std_in=1
