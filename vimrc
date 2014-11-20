@@ -11,9 +11,6 @@ set nocompatible
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set hlsearch
 
-nmap <c-s> :w<CR>
-imap <c-s> <Esc>:w<CR>a
-
 map <C-n> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
@@ -45,6 +42,12 @@ let g:neocomplete#enable_at_startup = 1
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_json_checkers=['jsonlint']
+
+" mapping of multicursor keys
+let g:multi_cursor_next_key='<C-m>'
+let g:multi_cursor_prev_key=''
+let g:multi_cursor_skip_key=''
+let g:multi_cursor_quit_key='<Esc>'
 
 function! g:UltiSnips_Complete()
     call UltiSnips#ExpandSnippet()
