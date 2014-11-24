@@ -4,7 +4,7 @@ filetype off
 syntax on
 filetype plugin indent on
 
-set ts=2
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 set number
 set encoding=utf-8
 set nocompatible
@@ -28,9 +28,12 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>d <Plug>(go-def)
+au FileType go set shiftwidth=8 tabstop=8 softtabstop=8 expandtab=0 smarttab
 
 set background=dark
 colorscheme jellybeans
+
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 let g:go_fmt_fail_silently = 1
 let g:go_fmt_command = "goimports"
@@ -73,12 +76,24 @@ let g:UltiSnipsListSnippets="<c-e>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 if has('gui_running')
-  set guioptions-=T  " no toolbar
-  let g:Powerline_symbols = 'fancy'
-  set lines=60 columns=108 linespace=0
-  set guifont=Sauce\ Code\ Powerline\ Bold
-  let g:airline_powerline_fonts = 1
+    set guioptions-=T  " no toolbar
+    let g:Powerline_symbols = 'fancy'
+    set lines=60 columns=108 linespace=0
+    set guifont=Sauce\ Code\ Powerline\ Bold
+    let g:airline_powerline_fonts = 1
 else
-  let g:solarized_termcolors=256
-  set t_Co=256
+    let g:solarized_termcolors=256
+    set t_Co=256
 endif
+
+autocmd WinEnter * call s:CloseIfOnlyNerdTreeLeft()
+
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName")
+    if bufwinnr(t:NERDTreeBufName) != -1
+      if winnr("$") == 1
+        q
+      endif
+    endif
+  endif
+endfunction
