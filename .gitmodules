@@ -49,6 +49,10 @@
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
-[submodule "bundle/tern"]
-	path = bundle/tern
-	url = https://github.com/marijnh/tern_for_vim.git
+[submodule "bundle/vimux"]
+	path = bundle/vimux
+    url = https://github.com/benmills/vimux.git
+[submodule "bundle/vim-jsx"]
+    path = bundle/vim-jsx
+    url = https://github.com/mxw/vim-jsx.git
+

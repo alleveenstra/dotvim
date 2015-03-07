@@ -4,12 +4,21 @@ filetype off
 syntax on
 filetype plugin indent on
 
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set number
 set encoding=utf-8
 set nocompatible
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set hlsearch
+
+#inoremap  <Up>     <NOP>
+#inoremap  <Down>   <NOP>
+#inoremap  <Left>   <NOP>
+#inoremap  <Right>  <NOP>
+#noremap   <Up>     <NOP>
+#noremap   <Down>   <NOP>
+#noremap   <Left>   <NOP>
+#noremap   <Right>  <NOP>
 
 map <C-n> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
@@ -28,7 +37,6 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>d <Plug>(go-def)
-au FileType go set shiftwidth=8 tabstop=8 softtabstop=8 expandtab=0 smarttab
 
 set background=dark
 colorscheme jellybeans
