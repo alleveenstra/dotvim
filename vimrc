@@ -4,7 +4,7 @@ filetype off
 syntax on
 filetype plugin indent on
 
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=8 softtabstop=0 shiftwidth=4 smarttab
 set number
 set encoding=utf-8
 set nocompatible
@@ -28,7 +28,8 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>d <Plug>(go-def)
-au FileType go set shiftwidth=8 tabstop=8 softtabstop=8 expandtab=0 smarttab
+au FileType go set shiftwidth=8 tabstop=8 softtabstop=8 smarttab
+au FileType go color molokai
 
 set background=dark
 colorscheme jellybeans
